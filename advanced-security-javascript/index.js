@@ -10,7 +10,6 @@ var win32 = os.platform() === 'win32'
 
 var noop = function () {}
 
-
 var echo = function (name) {
   return name
 }
