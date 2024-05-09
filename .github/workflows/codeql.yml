@@ -16,8 +16,7 @@ on:
     branches: [ "disabled" ]
   pull_request:
     branches: [ "disabled" ]
-  schedule:
-    - cron: '34 20 * * 4'
+
 
 jobs:
   analyze:
