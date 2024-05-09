@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-
 	"github.com/octodemo/advanced-security-go/models"
 
 	_ "github.com/mattn/go-sqlite3"
