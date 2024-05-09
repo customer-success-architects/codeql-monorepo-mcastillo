@@ -1,0 +1,37 @@
+name: "CodeQL - Go Project"
+
+on:
+    push:
+        paths:
+            - 'advanced-security-go/**'
+        branches: ["main"]
+    pull_request:
+        paths:
+            - 'advanced-security-go/**'
+        branches: ["main"]
+
+jobs:
+    analyze:
+        name: Analyze
+        runs-on: ubuntu-latest
+        permissions:
+            actions: read
+            contents: read
+            security-events: write
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                sparse-checkout: advanced-security-go/
+
+            - name: Initialize CodeQL
+              uses: github/codeql-action/init@v3
+              with:
+                  languages: "go" # specify the languages used in this project
+
+            - name: Autobuild
+              uses: github/codeql-action/autobuild@v3
+
+            - name: Perform CodeQL Analysis
+              uses: github/codeql-action/analyze@v3
